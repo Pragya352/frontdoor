@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>frontdoor</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>frontdoor</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -48,8 +48,18 @@
 					</excludes>
 				</configuration>
 			</plugin>
-		</plugins>
-	</build>
+        <plugin>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>>azure-webapp-maven-plugin</artifactId>
+            <version>5.10.2023</version>
+            <configuration>
+                <schemaVersion>v2</schemaVersion>
+                <resourceGroup>Group1</resourceGroup>
+                <appName>frontdoor</appName>
+            </configuration>
+        </plugin>
+        </plugins>
+        </build>
 	<repositories>
 		<repository>
 			<id>spring-milestones</id>
