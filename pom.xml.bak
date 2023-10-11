@@ -52,11 +52,6 @@
             <groupId>com.microsoft.azure</groupId>
             <artifactId>>azure-webapp-maven-plugin</artifactId>
             <version>5.10.2023</version>
-            <configuration>
-                <schemaVersion>v2</schemaVersion>
-                <resourceGroup>Group1</resourceGroup>
-                <appName>frontdoor</appName>
-            </configuration>
         </plugin>
         </plugins>
         </build>
