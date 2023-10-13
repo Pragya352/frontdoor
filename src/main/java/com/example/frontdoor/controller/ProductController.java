@@ -24,7 +24,7 @@ public class ProductController {
     
     @GetMapping("/user")
     public String user(){
-        return "Hello User11!!";
+        return "***Hello User1***";
     }
 
     @PostMapping
