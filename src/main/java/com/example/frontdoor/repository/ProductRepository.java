@@ -26,7 +26,7 @@ public class ProductRepository {
 
     public Product findById(int id){
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getId() == (id)) {
+            if (list.get(i).getProductId() == (id)) {
                 return list.get(i);
             }
         }
@@ -34,13 +34,13 @@ public class ProductRepository {
     }
 
     public List<Product> search(String name) {
-        return list.stream().filter(x -> x.getName().startsWith(name)).collect(Collectors.toList());
+        return list.stream().filter(x -> x.getProductName().startsWith(name)).collect(Collectors.toList());
     }
 
     public Product save(Product p) {
         Product product = new Product();
-        product.setId(p.getId());
-        product.setName(p.getName());
+        product.setProductId(p.getProductId());
+        product.setProductName(p.getProductName());
         product.setQuantity(p.getQuantity());
         product.setPrice(p.getPrice());
         list.add(product);
@@ -48,7 +48,7 @@ public class ProductRepository {
     }
 
     public String delete(Integer id) {
-        list.removeIf(x -> x.getId() == (id));
+        list.removeIf(x -> x.getProductId() == (id));
         return null;
     }
 
@@ -56,16 +56,16 @@ public class ProductRepository {
         int idx = 0;
         int id = 0;
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getId() == (product.getId())) {
-                id = product.getId();
+            if (list.get(i).getProductId() == (product.getProductId())) {
+                id = product.getProductId();
                 idx = i;
                 break;
             }
         }
 
         Product product1 = new Product();
-        product1.setId(id);
-        product1.setName(product.getName());
+        product1.setProductId(id);
+        product1.setProductName(product.getProductName());
         product1.setQuantity(product.getQuantity());
         product1.setPrice(product.getPrice());
         list.set(idx, product);

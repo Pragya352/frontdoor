@@ -10,8 +10,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Product {
-    private int id;
-    private String name;
+    private int productId;
+    private String productName;
     private int quantity;
     private double price;
 
